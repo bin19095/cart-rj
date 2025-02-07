@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Products from './components/Products';
 import Filter from "./components/Filter";
@@ -80,7 +79,7 @@ handleAddToCart=(e, product)=> {
 }
     handleRemoveFromCart =(e,item)=>{
         this.setState(state=>{
-            const cartItems=state.cartItems.filter(el=>el.id!=item.id);
+            const cartItems=state.cartItems.filter(el=>el.id!==item.id);
             localStorage.setItem("cartItem,",cartItems);
             return {cartItems};
         });
